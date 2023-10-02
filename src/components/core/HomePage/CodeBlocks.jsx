@@ -50,7 +50,7 @@ function CodeBlocks({ position, heading, subheading, ctabtn1, ctabtn2, codeblock
 
                 </div>
 
-                <div className={`w-[90%] flex flex-col gap-2 font-bold font-mono ${codeColor}  bg-gradient-radial from-${backgroundGradient} via-slate-950 to-slate-950  pr-2`}>
+                <div className={`w-[90%] flex flex-col gap-2 font-bold font-mono ${codeColor}  bg-gradient-radial ${backgroundGradient} via-slate-950 to-slate-950  pr-2`}>
                     <TypeAnimation
                         sequence={[codeblock, 4000, ""]}
                         repeat={Infinity}
