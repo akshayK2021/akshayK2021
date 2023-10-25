@@ -9,16 +9,17 @@ import TimelineSection from "../components/core/HomePage/TimelineSection";
 import LearningLanguagesection from "../components/core/HomePage/LearningLanguageSection";
 import InstructorSection from "../components/core/HomePage/InstructorSection"
 import ExploreMore from "../components/core/HomePage/ExploreMore";
+import Navbar from "../components/common/Navbar";
 
 
 function Home() {
     return (
-        <div className="text-white flex flex-col items-center justify-center">
+        <div className="text-white flex flex-col items-center justify-center mt-6">
             {/*Section1 */}
             <div className="relative mx-auto flex flex-col w-11/12 items-center text-white justify-between ">
                 <Link to={'/signup'}>
                     <div className=" group mx-auto mt-12 p-1 rounded-full bg-slate-800 font-bold text-gray-400 transition-all duration-200 hover:scale-95 w-fit">
-                        <div className="flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200  group-hover:bg-slate-950 hover:text-white">
+                        <div className="flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200  group-hover:bg-slate-900 hover:text-white">
                             <p className="">Become an Instructor</p>
                             <p className="mt-[2px]"><FaArrowRight /></p>
 
@@ -122,7 +123,7 @@ function Home() {
             </div>
 
             {/*section2*/}
-            <div className="bg-gray-50 text-slate-700   mt-32">
+            <div className="bg-gray-50 text-slate-700  ">
                 <div className="homepage_bg h-[310px]">
                     <div className={`w-11/12 max-w-maxContent flex flex-col items-center gap-5 mx-auto my-auto`}>
                         <div className="h-[150px]"></div>
