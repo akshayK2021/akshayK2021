@@ -1,31 +1,48 @@
-const express=require("express")
-const router=express.Router()
+// Import the required modules
+const express = require("express")
+const router = express.Router()
 
-const{login,signup,sendOTP,changePassword}=require("../controllers/Auth")
-const{resetPassword,resetPasswordToken}=require("../controllers/ResetPassword")
-const {auth}=require("../middlewares/auth")
+// Import the required controllers and middleware functions
+const {
+  login,
+  signup,
+  sendotp,
+  changePassword,
+} = require("../controllers/Auth")
+const {
+  resetPasswordToken,
+  resetPassword,
+} = require("../controllers/ResetPassword")
 
+const { auth } = require("../middlewares/auth")
 
-//Route for User login
-router.post("/login",login)
-//Route for the Signup
-router.post("/signup",signup)
+// Routes for Login, Signup, and Authentication
 
-//Route for sending the Otp
-router.post("/sendotp",sendOTP)
+// ********************************************************************************************************
+//                                      Authentication routes
+// ********************************************************************************************************
 
-//Route for changing the Password
-router.post("/changepassword",auth,changePassword)
+// Route for user login
+router.post("/login", login)
 
-//**********************************************************************************************/
-//                                Reset Password                                               //
-//**********************************************************************************************/
+// Route for user signup
+router.post("/signup", signup)
 
-//Route for generating a reset Password token
-router.post("/reset-password-token",resetPasswordToken)
+// Route for sending OTP to the user's email
+router.post("/sendotp", sendotp)
 
-//Route for resetting user's password after verification
-router.post("/reset-password",resetPassword)
+// Route for Changing the password
+router.post("/changepassword", auth, changePassword)
 
-//Export the router for use in the main application
-module.exports=router
+// ********************************************************************************************************
+//                                      Reset Password
+// ********************************************************************************************************
+
+// Route for generating a reset password token
+router.post("/reset-password-token", resetPasswordToken)
+
+// Route for resetting user's password after verification
+router.post("/reset-password", resetPassword)
+
+// Export the router for use in the main application
+module.exports = router

@@ -1,12 +1,18 @@
-import axios from "axios";
-export const axiosInstance=axios.create({});
+import axios from "axios"
 
-export const apiConnector=(method,url,bodyData,headers,params)=>{
+export const axiosInstance = axios.create({
+    headers: {
+        "Content-Type": "application/json",
+        // Add other default headers if needed.
+      },
+});
+
+export const apiConnector = (method, url, bodyData, headers, params) => {
     return axiosInstance({
         method:`${method}`,
         url:`${url}`,
-        data:bodyData ? bodyData:null,
-        headers: headers? headers:null,
-        params:params? params:null,
-    })
+        data: bodyData ? bodyData : null,
+        headers: headers ? headers: null,
+        params: params ? params : null,
+    });
 }
